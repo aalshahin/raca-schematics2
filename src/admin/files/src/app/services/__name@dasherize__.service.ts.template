@@ -1,0 +1,43 @@
+import { DialogService } from './dialog.service';
+import { UrlService } from "@services/url.service";
+import { FactoryService } from "@services/factory.service";
+import { CastResponseContainer } from '@app/decorators/decorators/cast-response';
+import { Pagination } from '@app/models/pagination';
+import { <%= classify(name)%>PopupComponent } from "@app/administration/popups/<%=dasherize(name)%>-popup.component";
+
+@CastResponseContainer({
+  $default: {
+    model: () => <%= classify(name)%>
+  },
+  $pagination: {
+    model: () => Pagination,
+    shape: { 'rs.*': () => <%= classify(name)%> }
+  }
+})
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class <%= classify(name)%>Service extends CrudWithDialogGenericService<<%= classify(name)%>> {
+  constructor(
+    public http: HttpClient,
+    public urlService: UrlService,
+    public dialog: DialogService
+  ) {
+    super();
+    FactoryService.registerService('<%= classify(name)%>Service', this)
+  }
+
+  _getDialogComponent(): ComponentType<any> {
+    return <%= classify(name)%>Component
+  }
+
+  _getModel(): new () => <%= classify(name)%> {
+    return <%= classify(name)%>
+  }
+
+  _getServiceURL(): string {
+    return this.urlService.URLS.<%= urlName%>
+  }
+}

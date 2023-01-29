@@ -1,0 +1,33 @@
+import { Component, ViewChild } from '@angular/core';
+import { AdminGenericComponent } from '@app/generics/admin-generic-component';
+import { <%=classify(name)%> } from '@app/models/<%=dasherize(name)%>';
+import { <%=classify(name)%>Service } from '@app/services/<%=dasherize(name)%>.service';
+import { DialogService } from '@app/services/dialog.service';
+import { LangService } from '@app/services/lang.service';
+import { SharedService } from '@app/services/shared.service';
+import { ToastService } from '@app/services/toast.service';
+
+@Component({
+  selector: '<%=dasherize(name)%>',
+  templateUrl: './<%=dasherize(name)%>.component.html',
+  styleUrls: ['./<%=dasherize(name)%>.component.scss']
+})
+
+export class <%=classify(name)%>Component extends AdminGenericComponent<<%=classify(name)%>, <%=classify(name)%>Service>  {
+  @ViewChild('table') table!: TableComponent;
+  displayedColumns: string[] = [];
+
+  constructor(public lang: LangService,
+              public service: <%=classify(name)%>Service,
+              private dialogService: DialogService,
+              private sharedService: SharedService,
+              private toast: ToastService) {
+    super();
+  }
+
+  afterReload(): void {
+  }
+
+  protected _init(): void {
+  }
+}

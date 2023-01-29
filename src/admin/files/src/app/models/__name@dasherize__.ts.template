@@ -1,0 +1,32 @@
+import { BaseModel } from "@app/models/base-model";
+import { <%=classify(name)%>Service } from "@services/<%=dasherize(name)%>.service";
+import { FactoryService } from "@services/factory.service";
+import { LangService } from "@services/lang.service";
+import { InterceptModel } from "@decorators/intercept-model";
+import { <%=classify(name)%>Interceptor } from "@app/model-interceptors/<%=dasherize(name)%>-interceptor";
+import { INames } from "@contracts/i-names";
+import { searchFunctionType } from "@app/types/types";
+
+const {receive, send} = new <%=classify(name)%>Interceptor()
+
+@InterceptModel({receive, send})
+export class <%=classify(name)%> extends BaseModel<<%=classify(name)%>, <%=classify(name)%>Service> {
+  service: <%=classify(name)%>Service;
+  langService!: LangService
+  
+  constructor() {
+    super();
+    this.service = FactoryService.getService('<%=classify(name)%>Service')
+    this.langService = FactoryService.getService('LangService');
+  }
+
+  getName(currentLang: string): string {
+    return this[currentLang + 'Name' as keyof INames]
+  }
+
+  searchFields: { [key: string]: searchFunctionType | string } = {
+  };
+
+  buildForm(controls?: boolean): any {
+  }
+}

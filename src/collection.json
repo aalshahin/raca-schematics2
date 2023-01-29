@@ -1,0 +1,20 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "default RACA Schematic",
+      "factory": "./ng-add/index#ngAdd",
+      "hidden": true
+    },
+    "e-service": {
+      "description": "A blank schematic.",
+      "factory": "./e-service/index#eService",
+      "schema": "./e-service/schema.json"
+    },
+    "admin":{
+      "description": "A blank admin page",
+      "factory": "./admin/index#admin",
+      "schema": "./admin/schema.json"
+    }
+  }
+}

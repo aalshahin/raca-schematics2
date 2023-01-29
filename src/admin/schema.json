@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "NewAdminSchematic", 
+  "title": "ng new options schema",
+  "type": "object",
+  "description": "Initialize a new project",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "name of the admin page",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the admin page? "
+    },
+    "endPoint": {
+      "type": "string",
+      "description": "the main endpoint for the admin page",
+      "x-prompt": "Please provide the main endpoint: ",
+      "default": "/deduction-ratio"
+    }
+  },
+  "required": [
+    "name",
+    "endPoint"
+  ]
+}
+  
