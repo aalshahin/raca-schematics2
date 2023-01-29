@@ -5,6 +5,9 @@ import { CastResponseContainer } from '@app/decorators/decorators/cast-response'
 import { Pagination } from '@app/models/pagination';
 import { <%= classify(name)%>PopupComponent } from "@app/administration/popups/<%=dasherize(name)%>-popup.component";
 import { CrudWithDialogGenericService } from '@app/generics/crud-with-dialog-generic-service';
+import { ComponentType } from '@angular/cdk/portal';
+import { <%= classify(name)%>Component } from '@app/administration/pages/employee-profile/employee-profile.component';
+
 
 @CastResponseContainer({
   $default: {
@@ -36,8 +39,8 @@ export class <%= classify(name)%>Service extends CrudWithDialogGenericService<<%
     return <%= classify(name)%>Component
   }
 
-  _getModel(): new () => <%= classify(name)%> {
-    return <%= classify(name)%>
+  _getModel(): new () => <%= classify(name)%>PopupComponent {
+    return <%= classify(name)%>PopupComponent
   }
 
   _getServiceURL(): string {

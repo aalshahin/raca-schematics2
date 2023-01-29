@@ -29,7 +29,7 @@ export class adminOptionsModel implements AdminOptions {
         this.enumName = this.urlName = strings.underscore(this.name).toUpperCase()
         this.menuKey = 'menu_' + strings.underscore(name).toLowerCase()
         this.componentPath = `./pages/${strings.dasherize(this.name)}/${strings.dasherize(this.name)}.component`
-        this.componentPopupPath = `./pages/${strings.dasherize(this.name)}/${strings.dasherize(this.name)}Popup.component`
+        this.componentPopupPath = `./popups/${strings.dasherize(this.name)}-popup/${strings.dasherize(this.name)}-popup.component`
     }
 
 }
