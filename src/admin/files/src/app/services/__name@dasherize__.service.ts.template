@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { DialogService } from './dialog.service';
 import { UrlService } from "@services/url.service";
 import { HttpClient } from '@angular/common/http';
