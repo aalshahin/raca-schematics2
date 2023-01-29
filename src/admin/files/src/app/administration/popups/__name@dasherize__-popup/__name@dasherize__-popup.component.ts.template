@@ -27,7 +27,6 @@ export class <%=classify(name)%>PopupComponent extends AdminGenericDialog<<%=cla
               private toast: ToastService,
               ) {
     super();
-    this.model = data.model;
   }
 
   initPopup(): void {
@@ -47,11 +46,11 @@ export class <%=classify(name)%>PopupComponent extends AdminGenericDialog<<%=cla
   destroyPopup(): void {
   }
 
-  afterSave(model: DeductionRatio2, dialogRef: DialogRef): void {
+  afterSave(model: <%=dasherize(name)%>, dialogRef: DialogRef): void {
       throw new Error('Method not implemented.');
   }
   
-  prepareModel(model: DeductionRatio2, form: UntypedFormGroup): DeductionRatio2 | Observable<DeductionRatio2> {
+  prepareModel(model: <%=dasherize(name)%>, form: UntypedFormGroup): <%=dasherize(name)%> | Observable<<%=dasherize(name)%>> {
       throw new Error('Method not implemented.');
   }
 }

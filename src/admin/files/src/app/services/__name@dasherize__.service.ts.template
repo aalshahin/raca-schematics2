@@ -7,8 +7,8 @@ import { CastResponseContainer } from '@app/decorators/decorators/cast-response'
 import { Pagination } from '@app/models/pagination';
 import { CrudWithDialogGenericService } from '@app/generics/crud-with-dialog-generic-service';
 import { ComponentType } from '@angular/cdk/portal';
-import { <%= classify(name)%>PopupComponent } from "@app/administration/popups/<%=dasherize(name)%>-popup.component";
-import { <%= classify(name)%>Component } from '@app/administration/pages/employee-profile/employee-profile.component';
+import { <%= classify(name)%>PopupComponent } from '@app/administration/popups/<%=dasherize(name)%>-popup/<%=dasherize(name)%>-popup.component';
+import { <%= classify(name)%>Component } from '@app/administration/pages/<%=dasherize(name)%>/<%=dasherize(name)%>.component';
 import { <%= classify(name)%> } from "@app/models/<%=dasherize(name)%>";
 
 
