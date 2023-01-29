@@ -12,3 +12,4 @@ export function insertStatement(node: Block, statement: string): Change {
     }
     return new InsertChange(lastNode.getSourceFile().fileName, position, statement)
 }
+ 

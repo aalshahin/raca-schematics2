@@ -6,6 +6,8 @@ import { DialogService } from '@app/services/dialog.service';
 import { LangService } from '@app/services/lang.service';
 import { SharedService } from '@app/services/shared.service';
 import { ToastService } from '@app/services/toast.service';
+import { IMenuItem } from '@app/modules/context-menu/interfaces/i-menu-item';
+import { TableComponent } from '@app/shared/components/table/table.component';
 
 @Component({
   selector: '<%=dasherize(name)%>',
@@ -16,6 +18,7 @@ import { ToastService } from '@app/services/toast.service';
 export class <%=classify(name)%>Component extends AdminGenericComponent<<%=classify(name)%>, <%=classify(name)%>Service>  {
   @ViewChild('table') table!: TableComponent;
   displayedColumns: string[] = [];
+  actions: IMenuItem<<%=classify(name)%>>[]=[];
 
   constructor(public lang: LangService,
               public service: <%=classify(name)%>Service,

@@ -18,7 +18,8 @@ import { Observable, of } from 'rxjs';
 export class <%=classify(name)%>PopupComponent extends AdminGenericDialog<<%=classify(name)%>> {
   form!: UntypedFormGroup;
   model!: <%=classify(name)%>;
-  
+  operation!: OperationTypes;
+
   constructor(public dialogRef: DialogRef,
               public fb: UntypedFormBuilder,
               public lang: LangService,
@@ -43,5 +44,13 @@ export class <%=classify(name)%>PopupComponent extends AdminGenericDialog<<%=cla
   }
 
   destroyPopup(): void {
+  }
+
+  afterSave(model: DeductionRatio2, dialogRef: DialogRef): void {
+      throw new Error('Method not implemented.');
+  }
+  
+  prepareModel(model: DeductionRatio2, form: UntypedFormGroup): DeductionRatio2 | Observable<DeductionRatio2> {
+      throw new Error('Method not implemented.');
   }
 }

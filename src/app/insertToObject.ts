@@ -18,7 +18,6 @@ export function insertToObject(node: ObjectLiteralExpression, key: string, value
     const matches = lastNode.getFullText().match(/^(\r?\n)(\s*)/);
     let toAdd
 
-
     if (matches) {
         toAdd = !hasComma ? (`,` + matches[0] + (key + ': ' + `${value}`)) : (matches[0] + key + ': ' + `${value}`)
     } else {

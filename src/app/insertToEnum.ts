@@ -12,7 +12,7 @@ export function insertToEnum(node: EnumDeclaration | InterfaceDeclaration, key: 
     const path = node.getSourceFile().fileName;
     let toAdd = '';
     const position = node.members.length ? lastNode.getEnd() + (hasComma ? 1 : 0) : node.getEnd() - 1
-
+ 
     if (!key)
         throw new SchematicsException('Please Provide the Key');
 

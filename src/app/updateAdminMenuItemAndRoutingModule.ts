@@ -98,7 +98,7 @@ export function updateAdminMenuItemAndRoutingModule(options: AdminOptions): Rule
         const latestModuleContent = host.readText(selectedOptions.module)
         const latestModuleSource = createSourceFile(selectedOptions.module, latestModuleContent, ScriptTarget.Latest, true)
 
-        const declareChange = addDeclarationToModule(latestModuleSource, selectedOptions.module, strings.classify(options.name), options.urlName)
+        const declareChange = addDeclarationToModule(latestModuleSource, selectedOptions.module, (options.name+ 'PopupComponent'), options.componentPopupPath)
         const declareRecorder = host.beginUpdate(selectedOptions.module)
         applyToUpdateRecorder(declareRecorder, declareChange)
         host.commitUpdate(declareRecorder)

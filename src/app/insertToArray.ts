@@ -14,3 +14,4 @@ export function insertToArray(node: ArrayLiteralExpression, toAdd: string): Chan
     }
     return new InsertChange(node.getSourceFile().fileName, position, toAdd)
 }
+ 

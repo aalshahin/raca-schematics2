@@ -4,6 +4,7 @@ import { FactoryService } from "@services/factory.service";
 import { CastResponseContainer } from '@app/decorators/decorators/cast-response';
 import { Pagination } from '@app/models/pagination';
 import { <%= classify(name)%>PopupComponent } from "@app/administration/popups/<%=dasherize(name)%>-popup.component";
+import { CrudWithDialogGenericService } from '@app/generics/crud-with-dialog-generic-service';
 
 @CastResponseContainer({
   $default: {
@@ -20,6 +21,8 @@ import { <%= classify(name)%>PopupComponent } from "@app/administration/popups/<
 })
 
 export class <%= classify(name)%>Service extends CrudWithDialogGenericService<<%= classify(name)%>> {
+  list: <%= classify(name)%>[]=[];
+
   constructor(
     public http: HttpClient,
     public urlService: UrlService,

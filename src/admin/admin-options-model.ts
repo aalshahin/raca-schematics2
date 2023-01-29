@@ -13,7 +13,8 @@ export class adminOptionsModel implements AdminOptions {
     menuKey: string;
     routeName: string;
     componentPath: string;
-
+    componentPopupPath: string;
+    
     constructor(options: AdminOptions) {
         this.endPoint = options.endPoint
         this.init(options.name)
@@ -27,7 +28,8 @@ export class adminOptionsModel implements AdminOptions {
         this.interceptorPath = '@model-interceptors/' + this.fileName + '-interceptor'
         this.enumName = this.urlName = strings.underscore(this.name).toUpperCase()
         this.menuKey = 'menu_' + strings.underscore(name).toLowerCase()
-        this.componentPath = `@administration/pages/${strings.dasherize(this.name)}/${strings.dasherize(this.name)}.component`
+        this.componentPath = `./pages/${strings.dasherize(this.name)}/${strings.dasherize(this.name)}.component`
+        this.componentPopupPath = `./pages/${strings.dasherize(this.name)}/${strings.dasherize(this.name)}Popup.component`
     }
 
 }

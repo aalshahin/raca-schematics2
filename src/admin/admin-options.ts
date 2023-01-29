@@ -7,5 +7,6 @@ export interface AdminOptions {
     routeName: string
     interceptorPath: string;
     componentPath: string;
+    componentPopupPath: string;
     menuKey:string;
 }
